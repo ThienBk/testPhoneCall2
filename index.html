@@ -1,260 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="./main.css" /> -->
-    <title>Landing page của Thiện</title>
-  </head>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Key Way - Dịch vụ an toàn thực phẩm</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    text-align: center;
+  }
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  .intro {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  .call-to-action {
+    text-align: center;
+    margin-top: 30px;
+  }
+</style>
+</head>
+<body>
+<header>
+  <h1>Key Way - Dịch vụ an toàn thực phẩm</h1>
+</header>
+<div class="container">
+  <section class="intro">
+    <h2>Giới thiệu về chúng tôi</h2>
+    <p>Key Way là một công ty chuyên cung cấp dịch vụ an toàn thực phẩm hàng đầu. Chúng tôi cam kết đảm bảo chất lượng và sự an toàn của thực phẩm từ quá trình sản xuất đến tiêu thụ.</p>
+  </section>
+  <section class="call-to-action">
+    <h2>Liên hệ ngay để biết thêm chi tiết</h2>
+    <p>Để biết thêm thông tin về dịch vụ và nhận tư vấn miễn phí, hãy gọi ngay:</p>
+    <a id="call-button" href="#" onclick="callNow()">Gọi ngay</a>
+  </section>
+</div>
+<script>
+  function callNow() {
+    var phoneNumber = "0333298557";
+    if (window.innerWidth <= 768) {
+      // On mobile, initiate a phone call
+      window.location.href = "tel:" + phoneNumber;
+    } else {
+      // On desktop, display the phone number
+      document.getElementById("call-button").innerText = "Gọi ngay: " + phoneNumber;
     }
-    .header {
-      /* display: flex; */
-      /* align-items: center; */
-      /* width: 100%; */
-      display: block;
-      background: #fafafa;
-    }
-    .header > img {
-      width: 260px;
-      height: 200px;
-      color: #fff;
-    }
-    .header > h1 {
-      display: inline;
-      text-align: center;
-      margin-left: 10%;
-      font-size: 80px;
-    }
-    .ul_list_link {
-      border: 1px solid #000;
-      min-height: 100px;
-    }
-    .ul_list_link > ul {
-      margin-top: 25px;
-      list-style-type: none;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-around;
-      align-items: center;
-      font-weight: 800;
-    }
-    .ul_list_link > ul > li {
-      margin: 0 10px;
-      cursor: pointer;
-      padding: 10px 20px;
-      border: 1px solid #888;
-    }
-    .ul_list_link > ul > li:hover {
-      /* margin-top: -10px; */
-      background-color: #807d7d;
-    }
-    .ul_list_link > ul > li > a {
-      text-decoration: none;
-      color: #000;
-      padding: 20px 40px;
-    }
-    .ul_list_link > ul > li > a:hover {
-      color: rgb(255, 255, 255);
-    }
-    .ul_list_link > ul > a > img {
-      width: 150px;
-      height: 150px;
-    }
-
-    /* Slogan css */
-    .Slogan{
-      padding: 10px 0;
-    }
-    .Slogan > h1{
-      color: red;
-    }
-    .content > h4 > p{
-      text-align: center;
-    }
-
-    /* Mobile reponsive */
-    @media (max-width: 600px) {
-      .header {
-      }
-      .header > img {
-        width: 60px;
-        height: 50px;
-      }
-      .header h1 {
-        color: green;
-        margin-left: 4%;
-        margin-top: 2%;
-        font-size: 26px;
-      }
-
-      /* Ul list link css */
-
-      .ul_list_link {
-        
-      }
-      .ul_list_link > ul {
-        /* list-style-type: none; */
-        /* display: flex; */
-        /* flex-wrap: wrap; */
-      }
-      .ul_list_link > ul > li {
-        background: green;
-        margin: 0 10px;
-        width: 400px;
-      }
-      .ul_list_link > ul > li > a {
-        text-decoration: none;
-        color: #000;
-      }
-      .ul_list_link > ul > a > img{
-        display: none;
-      }
-
-      /* Body css */
-      .Slogan{
-        padding: 0 10px;
-        text-align: center;
-      }
-      .content{
-        
-      }
-      .content > h4{
-      }
-      .content > h4 > img{
-        width: 370px;
-        height: 400px;
-      }
-    }
-  </style>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-info">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="">Nhà thuốc Trường Xuân Vương</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
-            </li>
-            <li class="nav-item dropdown">
-              <a
-                class="nav-link dropdown-toggle"
-                href="#"
-                id="navbarDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><hr class="dropdown-divider" /></li>
-                <li>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                </li>
-              </ul>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link disabled"
-                href="#"
-                tabindex="-1"
-                aria-disabled="true"
-                >Disabled</a
-              >
-            </li>
-          </ul>
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form>
-        </div>
-      </div>
-    </nav>
-
-    <div class="header">
-      <img
-        src="https://icarepharma.com.vn/wp-content/uploads/2021/11/logo-green-cross-pharmacy-vector-6235717_636891222549580691.jpg"
-        alt=""
-      />
-      <h1>SỨC KHỎE PHÁI MẠNH</h1>
-    </div>
-
-    <div class="ul_list_link">
-      <ul>
-        <a href=""
-          ><img src="https://cdn-icons-png.flaticon.com/512/25/25694.png"
-        /></a>
-        <li><a href="https://vnexpress.net/thoi-su">THỜI SỰ</a></li>
-        <li><a href="https://vtc.vn/kinh-te-29.html">KINH TẾ - XÃ HỘI</a></li>
-        <li><a href="https://vnexpress.net/thoi-su/chinh-tri">CHÍNH TRỊ</a></li>
-        <li><a href="https://vnexpress.net/">SỰ KIỆN NÓNG</a></li>
-        <li><a href="">BÀI THUỐC DÂN GIAN</a></li>
-      </ul>
-    </div>
-
-    <div class="container Slogan">
-      <h1>
-        VỢ TRẺ SỬNG SỐT VÌ CHỒNG U80 VẪN HỪNG HỰC LỬA YÊU KHIẾN U30 PHẢI GHEN TỴ
-        - 80 TUỔI VẪN SINH 2 CON , CÀY 3 HIỆP 1 TỐI CHỈ NHỜ THỨ NÀY..
-      </h1>
-    </div>
-
-    <hr />
-
-    <div class="container content">
-      <h2>
-        Đều đặn làm chuyện đó 3-5 lần 1 tuần của ông cụ U93 cùng người vợ kém mình
-        52 tuổi có lẽ sẽ làm cho các đấng mày râu trẻ tuổi thấy xấu hổ. Tuy nhiên,
-        thực sự thì không phải ai cũng làm được điều đó, vậy bí quyết của người
-        đàn ông này là gì?
-      </h2>
-      <h4>
-        Trải qua 4 đời vợ, ông Nguyễn Hữu Trọng (93 tuổi, giám đốc trung tâm Nam
-        Dược Thần Hiệu Tuệ Tĩnh Đường, Viện trưởng viện Nghiên cứu Y học cổ truyền
-        sản phẩm hữu cơ Việt Nam) dừng chân tại người vợ kém mình 52 tuổi, không
-        những vậy người đàn ông này còn có 2 con ở tuổi 80.
-        <img class="mt-2" src="https://i.ytimg.com/vi/jRp4JUAHSIE/maxresdefault.jpg" alt="">
-        <p class="">Bác sĩ Nguyễn Hữu Trọng</p>
-      </h4>
-    </div>
-
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  }
+</script>
+</body>
 </html>
