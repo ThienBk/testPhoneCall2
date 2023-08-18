@@ -66,7 +66,7 @@
         margin-top: 30px;
         position: fixed;
         bottom: 30px;
-        right: 0;
+        right: 22px;
         /* transform: translateX(-50%); */
         background-color: #e71919;
         color: #fff;
@@ -80,18 +80,18 @@
         font-size: 30px;
       }
 
-      .form-section{
+      .form-section {
         border: #333 1px solid;
         padding: 20px 40px;
-        width: 400px;
+        width: 320px;
         margin-left: 50%;
         transform: translateX(-50%);
       }
-      .form-section > h2{
+      .form-section > h2 {
         text-align: center;
         margin-bottom: 10px;
       }
-      .form-section > form{
+      .form-section > form {
         display: flex;
         flex-direction: column;
         width: 300px;
@@ -194,6 +194,18 @@
       }
 
       @media only screen and (max-width: 600px) {
+        .form-section > form {
+          display: flex;
+          flex-direction: column;
+          width: 320px;
+        }
+        .form-section > form > input {
+          width: 240px;
+          height: 100%;
+        }
+        .form-section > form > button {
+          width: 240px;
+        }
         .contact {
           display: none;
         }
@@ -356,7 +368,7 @@
             name="birthdate"
             required
           />
- 
+
           <label class="form-label mt-4" for="address">Địa chỉ:</label>
           <input
             class="form-input"
@@ -366,7 +378,9 @@
             required
           />
 
-          <label class="form-label mt-4" for="phone-number">Số điện thoại:</label>
+          <label class="form-label mt-4" for="phone-number"
+            >Số điện thoại:</label
+          >
           <input
             class="form-input"
             type="tel"
@@ -443,7 +457,11 @@
           "Số điện thoại: " +
           formData.phone_number;
 
-        GmailApp.sendEmail("thiennguyen2000qwer@gmail.com", emailSubject, emailBody);
+        GmailApp.sendEmail(
+          "thiennguyen2000qwer@gmail.com",
+          emailSubject,
+          emailBody
+        );
 
         var response = {
           status: "success",
