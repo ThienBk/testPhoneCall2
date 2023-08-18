@@ -73,6 +73,7 @@
         border-radius: 20px;
         padding: 4px 8px;
         width: 200px;
+        z-index: 2;
       }
       .call-to-action > a {
         text-decoration: none;
@@ -197,7 +198,7 @@
         .form-section > form {
           display: flex;
           flex-direction: column;
-          width: 320px;
+          max-width: 320px;
         }
         .form-section > form > input {
           width: 240px;
@@ -205,6 +206,9 @@
         }
         .form-section > form > button {
           width: 240px;
+        }
+        .img_bigSize{
+          max-width: 300px;
         }
         .contact {
           display: none;
@@ -332,7 +336,7 @@
           <img src="././img/CẢNG VỤ HÀNG HẢI HẢI PHÒNG.PNG" alt="" />
           <img src="././img/HẢI NGUYÊN PHONG.PNG" alt="" />
           <img src="././img/MARSHELL.PNG" alt="" />
-          <img src="././img/THUẬN THÀNH.PNG" alt="" />
+          <img class="img_bigSize" src="././img/THUẬN THÀNH.PNG" alt="" />
           <img class="w-50 mt-4" src="././img/NGŨ KIM HUY GIA.PNG" alt="" />
         </div>
       </section>
