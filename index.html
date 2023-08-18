@@ -79,6 +79,23 @@
         color: white;
         font-size: 30px;
       }
+
+      .form-section{
+        border: #333 1px solid;
+        padding: 20px 40px;
+        width: 400px;
+        margin-left: 50%;
+        transform: translateX(-50%);
+      }
+      .form-section > h2{
+        text-align: center;
+        margin-bottom: 10px;
+      }
+      .form-section > form{
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+      }
       /* footer css */
       .end {
         margin-top: 60px;
@@ -331,7 +348,7 @@
             required
           />
 
-          <label class="form-label" for="birthdate">Ngày sinh:</label>
+          <label class="form-label mt-4" for="birthdate">Ngày sinh:</label>
           <input
             class="form-input"
             type="date"
@@ -339,8 +356,8 @@
             name="birthdate"
             required
           />
-
-          <label class="form-label" for="address">Địa chỉ:</label>
+ 
+          <label class="form-label mt-4" for="address">Địa chỉ:</label>
           <input
             class="form-input"
             type="text"
@@ -349,7 +366,7 @@
             required
           />
 
-          <label class="form-label" for="phone-number">Số điện thoại:</label>
+          <label class="form-label mt-4" for="phone-number">Số điện thoại:</label>
           <input
             class="form-input"
             type="tel"
@@ -358,7 +375,7 @@
             required
           />
 
-          <button class="submit-button" type="submit">Đăng ký</button>
+          <button class="submit-button mt-5" type="submit">Đăng ký</button>
         </form>
       </section>
     </div>
