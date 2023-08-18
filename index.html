@@ -74,10 +74,119 @@
         padding: 4px 8px;
         width: 200px;
       }
-      .call-to-action > a{
+      .call-to-action > a {
         text-decoration: none;
         color: white;
         font-size: 30px;
+      }
+      /* footer css */
+      .end {
+        margin-top: 60px;
+      }
+      .contact {
+        min-width: 645px;
+        background-color: #a4222c;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px 0;
+        position: relative;
+        z-index: 1;
+        position: absolute;
+        top: -30px;
+      }
+      .contact::after {
+        content: "";
+        display: block;
+        border-style: solid;
+        border-width: 80px 25px;
+        border-color: #a4222c transparent transparent #a4222c;
+        position: absolute;
+        top: 0;
+        right: -49px;
+      }
+      .contact > h1 {
+        font-size: 22px;
+      }
+      .contact-link {
+        color: #fff;
+        text-decoration: none;
+      }
+      .contact-link.hotline {
+        font-size: 40px;
+      }
+      .contact-link:hover {
+        text-decoration: underline;
+      }
+      .contact > span {
+        color: #fff;
+      }
+      .email {
+        margin-left: 5px;
+        font-size: 16px;
+        text-transform: uppercase;
+      }
+      .contact > h1,
+      .contact > a,
+      .contact > span {
+        margin: 5px 0;
+      }
+      .end {
+        height: 150px;
+        position: relative;
+      }
+      .end-sticky {
+        background-color: #333;
+        position: absolute;
+        width: 100%;
+        height: 150px;
+        top: 0;
+        display: flex;
+        justify-content: flex-end;
+      }
+      .end-hotline {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 20px 50px;
+      }
+      .end-hotline > h1 {
+        font-size: 16px;
+        color: #fff;
+      }
+      .end-link.hotline {
+        font-size: 30px;
+        color: #fff;
+        text-decoration: none;
+      }
+      .end-hotline > span {
+        color: #fff;
+      }
+      .end-link.email {
+        color: #fff;
+        text-decoration: none;
+        font-size: 13px;
+      }
+      .end-hotline > h1,
+      .end-hotline > a,
+      .end-hotline > span {
+        margin: 3px 0;
+      }
+      .end-link:hover {
+        text-decoration: underline;
+      }
+
+      @media only screen and (max-width: 600px) {
+        .contact {
+          display: none;
+        }
+        .end > .end-sticky > .end-hotline-1 {
+          display: none;
+        }
+        .end > .end-sticky > .end-hotline-2 {
+          position: relative;
+          left: -40px;
+        }
       }
     </style>
   </head>
@@ -169,7 +278,9 @@
         <h2>Các lĩnh vực hoạt động</h2>
         <hr />
         <ul>
-          <li>Tư vấn HTQL: ISO 9001, ISO 14001, ISO 22000, ISO 45001,...</li>
+          <li>
+            Tư vấn HTQL: ISO 9001, ISO 14001, IcontactSO 22000, ISO 45001,...
+          </li>
           <li>
             Đào tạo nhận thức và chuyên gia đánh giá nội bộ hệ thống quản lý:
             ISO 9001, ISO 14001, ISO 22001, ISO 45001,...
@@ -180,38 +291,20 @@
             Tư vấn tiêu chuẩn trách nhiệm xã hội, tái chế (BSCI, GRS, FSC,...)
           </li>
         </ul>
-        <img
-          class="anhDaoTao w-50"
-          src="././img/anhDaoTao.jpg"
-          alt=""
-        />
+        <img class="anhDaoTao w-50" src="././img/anhDaoTao.jpg" alt="" />
       </section>
       <section class="text-center">
-        <img
-          class="w-50"
-          src="././img/GiayChungNhanDKDN.png"
-          alt=""
-        />
+        <img class="w-50" src="././img/GiayChungNhanDKDN.png" alt="" />
       </section>
       <section class="doiTac">
         <h2>Các đối tác của chúng tôi:</h2>
         <hr />
         <div class="anhDoiTac">
-          <img
-            src="././img/CẢNG VỤ HÀNG HẢI HẢI PHÒNG.PNG"
-            alt=""
-          />
-          <img
-            src="././img/HẢI NGUYÊN PHONG.PNG"
-            alt=""
-          />
+          <img src="././img/CẢNG VỤ HÀNG HẢI HẢI PHÒNG.PNG" alt="" />
+          <img src="././img/HẢI NGUYÊN PHONG.PNG" alt="" />
           <img src="././img/MARSHELL.PNG" alt="" />
           <img src="././img/THUẬN THÀNH.PNG" alt="" />
-          <img
-            class="w-50 mt-4"
-            src="././img/NGŨ KIM HUY GIA.PNG"
-            alt=""
-          />
+          <img class="w-50 mt-4" src="././img/NGŨ KIM HUY GIA.PNG" alt="" />
         </div>
       </section>
       <section class="call-to-action">
@@ -222,6 +315,81 @@
         </p> -->
         <a id="call-button" href="#" onclick="callNow()">Gọi ngay</a>
       </section>
+      <section class="form-section mt-5">
+        <h2>Đăng ký tư vấn</h2>
+        <form
+          id="consultation-form"
+          action="thiennguyen2000qwer@gmail.com"
+          method="POST"
+        >
+          <label class="form-label" for="full-name">Họ và tên:</label>
+          <input
+            class="form-input"
+            type="text"
+            id="full-name"
+            name="full-name"
+            required
+          />
+
+          <label class="form-label" for="birthdate">Ngày sinh:</label>
+          <input
+            class="form-input"
+            type="date"
+            id="birthdate"
+            name="birthdate"
+            required
+          />
+
+          <label class="form-label" for="address">Địa chỉ:</label>
+          <input
+            class="form-input"
+            type="text"
+            id="address"
+            name="address"
+            required
+          />
+
+          <label class="form-label" for="phone-number">Số điện thoại:</label>
+          <input
+            class="form-input"
+            type="tel"
+            id="phone-number"
+            name="phone-number"
+            required
+          />
+
+          <button class="submit-button" type="submit">Đăng ký</button>
+        </form>
+      </section>
+    </div>
+    <div class="end">
+      <footer class="footer">
+        <div class="contact">
+          <h1 class="text-white">Chúng tôi tư vấn 24/7</h1>
+          <a class="contact-link hotline" href="">0123 456 789</a>
+          <span
+            >EMAIL:<a class="contact-link email" href="#"
+              >keyway.com.vn</a
+            ></span
+          >
+        </div>
+      </footer>
+      <div class="end-sticky">
+        <div class="end-hotline end-hotline-1">
+          <h1>Chúng tôi tư vấn 24/7</h1>
+          <a class="end-link hotline" href="">0123 456 789</a>
+          <span
+            >EMAIL:<a class="end-link email" href="#">keyway.com.vn</a></span
+          >
+        </div>
+        <div class="end-hotline end-hotline-2">
+          <h1>Chúng tôi tư vấn 24/7</h1>
+          <a class="end-link hotline" href="">0123 456 789</a>
+          <span
+            >EMAIL:<a class="end-link email" href="#">keyway.com.vn</a></span
+          >
+        </div>
+      </div>
     </div>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
@@ -239,6 +407,35 @@
           document.getElementById("call-button").innerText =
             "Gọi ngay: " + phoneNumber;
         }
+      }
+
+      function doPost(e) {
+        var formData = JSON.parse(e.postData.contents);
+
+        var emailSubject = "Đăng ký tư vấn mới";
+        var emailBody =
+          "Họ và tên: " +
+          formData.full_name +
+          "\n" +
+          "Ngày sinh: " +
+          formData.birthdate +
+          "\n" +
+          "Địa chỉ: " +
+          formData.address +
+          "\n" +
+          "Số điện thoại: " +
+          formData.phone_number;
+
+        GmailApp.sendEmail("thiennguyen2000qwer@gmail.com", emailSubject, emailBody);
+
+        var response = {
+          status: "success",
+          message: "Đã gửi đăng ký thành công!",
+        };
+
+        return ContentService.createTextOutput(
+          JSON.stringify(response)
+        ).setMimeType(ContentService.MimeType.JSON);
       }
     </script>
   </body>
